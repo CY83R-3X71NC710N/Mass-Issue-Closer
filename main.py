@@ -1,6 +1,7 @@
 from github import Github
 import sys
 import os
+import platform
 
 # get the personal access token from the command-line arguments
 token = sys.argv[1]
@@ -21,9 +22,11 @@ for issue in issues:
 
 # Mitigate security vulnerability of passing access token as argument by clearing command-line-history    
 print("Warning: Clearing command-line history...")
-if os.name == 'nt':
-    os.system("doskey /reinstall")
-elif os.name == 'posix':
-    os.system("history -c")
+# clear command-line history
+if platform.system() == 'Windows':
+    os.system('cls')
 else:
-    print("Unsupported operating system")
+    os.system('history -c')
+
+# clear screen
+os.system('clear' if platform.system() != 'Windows' else 'cls')
