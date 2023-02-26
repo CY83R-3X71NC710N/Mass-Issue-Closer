@@ -16,4 +16,6 @@ python main.py INSERT_PAT_HERE
 ```
 
 # Did the script stop without closing all issues?
+```
   Simply rerun this has happened due to API rate limits by GitHub.
+```
