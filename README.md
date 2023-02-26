@@ -8,3 +8,9 @@ Next update the name and repository with your username and the repository you wa
 ```
 pip install PyGithub
 ```
+
+Run the script as
+
+```
+python main.py INSERT_PAT_HERE
+```
