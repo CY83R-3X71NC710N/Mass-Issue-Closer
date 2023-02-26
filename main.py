@@ -9,7 +9,7 @@ token = sys.argv[1]
 g = Github(token)
 
 # get repository
-repo = g.get_repo('CY83R-3X71NC710N/Weather-Dashboard-Updater')
+repo = g.get_repo('CY83R-3X71NC710N/Example-Project')
 
 # get all issues in the repository
 issues = repo.get_issues(state='open')
@@ -18,5 +18,6 @@ issues = repo.get_issues(state='open')
 for issue in issues:
     issue.edit(state='closed')
 
+# Mitigate security vulnerability of passing access token as argument by clearing command-line-history    
 print("Warning: Clearing command-line history...")
 os.system("history -c")
