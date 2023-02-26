@@ -17,6 +17,7 @@ issues = repo.get_issues(state='open')
 # iterate over the issues and close each one
 for issue in issues:
     issue.edit(state='closed')
+    print(f"Closed issue #{issue.number}: {issue.title}")
 
 # Mitigate security vulnerability of passing access token as argument by clearing command-line-history    
 print("Warning: Clearing command-line history...")
