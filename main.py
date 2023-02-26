@@ -22,7 +22,7 @@ for issue in issues:
 # Mitigate security vulnerability of passing access token as argument by clearing command-line-history    
 print("Warning: Clearing command-line history...")
 if os.name == 'nt':
-    os.system("cls")
+    os.system("doskey /reinstall")
 elif os.name == 'posix':
     os.system("history -c")
 else:
