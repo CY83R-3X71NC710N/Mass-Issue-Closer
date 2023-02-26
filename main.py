@@ -21,4 +21,9 @@ for issue in issues:
 
 # Mitigate security vulnerability of passing access token as argument by clearing command-line-history    
 print("Warning: Clearing command-line history...")
-os.system("history -c")
+if os.name == 'nt':
+    os.system("cls")
+elif os.name == 'posix':
+    os.system("history -c")
+else:
+    print("Unsupported operating system")
